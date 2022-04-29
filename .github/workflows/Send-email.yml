@@ -1,0 +1,21 @@
+name: Send Cloudslice email
+
+on: 
+  issues:
+    types: [labeled]
+
+jobs:
+  trigger-logicapp:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.label.name == 'cloudslice'}}
+    steps:
+      - name: echo event
+        run: echo ${{ github.event}}
+    
+    # trigger logic app and provide parameter
+
+      - name: trigger logic app
+        run: |
+          curl -X POST https://prod-205.westeurope.logic.azure.com:443/workflows/1bfeb8fedf444d43803f35872c22418c/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Q23pr5AehfPj-n1M58eZrIBNvEeHuNh4UoihgACgff0 -H "Content-Type: application/json" -d '{ "Issue_name": "${{ github. }}", "Issue_link": "https://123456", "Cloudslice_contact": "a@a.com"}'
+
+    
