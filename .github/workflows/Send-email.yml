@@ -10,7 +10,9 @@ jobs:
     if: ${{ github.event.label.name == 'cloudslice'}}
     steps:
       - name: echo event
-        run: echo ${{ github.event}}
+        env: 
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
     
     # trigger logic app and provide parameter
 
