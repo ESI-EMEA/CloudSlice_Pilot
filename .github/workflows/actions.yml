@@ -24,13 +24,14 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.label.name == 'cloudslice'}}
     steps:
-      - uses: octokit/request-action@v2.x
-        id: create_issue
+      - uses: actions/github-script@v6
         with:
-          route: POST /repos/{owner}/{repo}/issues
-          owner: ESI-EMEA
-          repo: CloudSlice_Pilot_LODS
-          title: '${{ github.event.issue.title}}'
-          body: 'related to ${{ github.event.issue.html_url}}'
+          script: |
+            github.rest.issues.create({
+              owner: ESI-EMEA,
+              repo: CloudSlice_Pilot_LODS,
+              title: "${{ github.event.issue.title}}
+              body: 'related to ${{ github.event.issue.html_url}}'
+            })
           
     
