@@ -26,6 +26,7 @@ jobs:
     steps:
       - uses: actions/github-script@v6
         with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             github.rest.issues.create({
               owner: "ESI-EMEA",
