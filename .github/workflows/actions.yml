@@ -33,6 +33,6 @@ jobs:
               repo: "CloudSlice_Pilot_LODS",
               title: "${{ github.event.issue.title}}"
               body: "related to ${{ github.event.issue.html_url}}"
-            })
+            });
           
     
