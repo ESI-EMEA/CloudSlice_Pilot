@@ -28,10 +28,10 @@ jobs:
         with:
           script: |
             github.rest.issues.create({
-              owner: ESI-EMEA,
-              repo: CloudSlice_Pilot_LODS,
-              title: "${{ github.event.issue.title}}
-              body: 'related to ${{ github.event.issue.html_url}}'
+              owner: "ESI-EMEA",
+              repo: "CloudSlice_Pilot_LODS",
+              title: "${{ github.event.issue.title}}"
+              body: "related to ${{ github.event.issue.html_url}}"
             })
           
     
