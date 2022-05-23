@@ -20,4 +20,16 @@ jobs:
         run: |
           curl -X POST "https://prod-205.westeurope.logic.azure.com:443/workflows/1bfeb8fedf444d43803f35872c22418c/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=${{ secrets.LOGICAPP_KEY }}" -H "Content-Type: application/json" -d '{ "Issue_created": "${{ github.event.issue.created_at }}", "Issue_link": "${{ github.event.issue.html_url}}", "Cloudslice_contact": "${{ secrets.EMAIL}}", "Repository": "${{ github.repository }}"}'
 
+  create-issue:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.label.name == 'cloudslice'}}
+    steps:
+      - name: create an issue
+        uses: dacbd/create-issue-action@main
+        with:
+          token: ${{ github.token }}
+          repo: ESI-EMEA/CloudSlice_Pilot_LODS
+          title: ${{ github.event.issue.title}}
+          body: related to ${{ github.event.issue.html_url}}
+      
     
