@@ -28,7 +28,8 @@ jobs:
         uses: dacbd/create-issue-action@main
         with:
           token: ${{ github.token }}
-          repo: ESI-EMEA/CloudSlice_Pilot_LODS
+          org: ESI-EMEA
+          repo: CloudSlice_Pilot_LODS
           title: ${{ github.event.issue.title}}
           body: related to ${{ github.event.issue.html_url}}
       
