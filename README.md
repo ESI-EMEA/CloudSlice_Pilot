@@ -3,9 +3,9 @@
 ![image](https://user-images.githubusercontent.com/64772417/171635588-43fb57eb-2f42-4bbc-93e0-a576206e60f0.png)
 
 The pilot is composed of:
-- it is composed of two public repositories:
-    - **CloudSlice Pilot** (https://github.com/ESI-EMEA/CloudSlice_Pilot/edit/main/README.md) --> simulates the lab repositories used by **MicrosoftLearning** organization (for example AZ204 repo https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure)
-    - CloudSlice Pilot LODS (https://github.com/ESI-EMEA/CloudSlice_Pilot_LODS) --> Simulates repositories used by LODS/Skillable for lab issues under **LODSCloudSlice** organization  (for example Cloudslice AZ204 repo https://github.com/LODSCloudSlice/AZ-204T00-A-Cloud-Slice)
+- 2  public repositories:
+    - [CloudSlice Pilot](https://github.com/ESI-EMEA/CloudSlice_Pilot/edit/main/README.md) --> **simulates** the lab repositories used by **MicrosoftLearning** GitHub organization (for example AZ204 repo https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure)
+    - [CloudSlice Pilot LODS](https://github.com/ESI-EMEA/CloudSlice_Pilot_LODS) -->**Simulates** repositories used by LODS/Skillable for lab issues under **LODSCloudSlice** GitHub organization  (for example Cloudslice AZ204 repo https://github.com/LODSCloudSlice/AZ-204T00-A-Cloud-Slice)
 
 And it works the following way:
 1. **MicrosoftLearning** repos are used to report any kind of lab related issue.
@@ -18,7 +18,7 @@ As an alternative, the GitHub Action is also prepared to trigger a Logic App in 
 
 # Summary
 This approach would provide:
-1. A single place for all learners+MTT/MCTs to track and report lab related issues.
+1. A single place for all learners+MTT/MCTs to track and report lab related issues. **Everything reported and tracked from MicrosoftLearning lab repositories**.
 2. Give freedom to both Content Dev and Skillable organization to define their own project management approach, keeping traceability on pending work. 
 
 
